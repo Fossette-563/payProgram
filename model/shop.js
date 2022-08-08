@@ -1,16 +1,29 @@
 import Http from "../utils/http"
 
-class ShopModel extends Http{
+class ShopModel extends Http {
   /**
    * 轮播图接口
    */
-  static getShopBanner(){
+  static getShopBanner() {
     return Http.request({
-      url : '/api/app/banner'
-    },{
-      header : {
-        devicetype : 'H5'
+      url: '/api/app/banner'
+    }, {
+      header: {
+        devicetype: 'H5'
       }
+    })
+  }
+  /**
+   * 获取商品信息接口
+   */
+  static getShopingInfo(qcode) {
+    return Http.request({
+      url: "/api/getProduct",
+      method: 'GET',
+      data: {
+        qcode
+      },
+      name: 'api2'
     })
   }
 }

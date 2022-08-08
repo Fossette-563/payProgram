@@ -15,6 +15,18 @@ class Storage{
   static removeAll(){
     wx.clearStorageSync()
   }
+  /**
+   * 存储token
+   */
+  static setToken(token){
+    wx.setStorageSync(field.loginCredentials,token)
+  }
+  /**
+   * 存储用户信息
+   */
+  static setUserInfo(userInfo){
+    wx.setStorageSync(field.userInfoKey,userInfo)
+  }
 }
 
 export default Storage

@@ -1,9 +1,7 @@
-/* component/i-swiper/i-swiper.wxss */
 .swiper-wrap{
   height : 320rpx;
-  background-color: red;
+  /* background-color: red; */
 }
-
 .swiper-wrap swiper{
   height : 100%;
   width: 100%;

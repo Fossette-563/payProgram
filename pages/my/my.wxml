@@ -1,2 +1,15 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view>
+  <text selectable>pages/my/my.wxml</text>
+</view>
+
+<!-- <scroll-view class="scrView" scroll-y>
+  <view class="View1">A</view>
+  <view  class="View2">B</view>
+  <view   class="View3">C</view>
+</scroll-view> -->
+<swiper class="scrView" indicator-dots autoplay interval="1000">
+  <swiper-item class="View1">A</swiper-item>
+  <swiper-item class="View2">B</swiper-item>
+  <swiper-item class="View3">C</swiper-item>
+</swiper>

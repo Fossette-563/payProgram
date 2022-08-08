@@ -1,22 +1,55 @@
 // pages/shop/shop.js
 import ShopModel from "../../model/shop"
+import {
+  navigateTo
+} from '../../utils/navigate'
+import {
+  addCart
+} from '../../common/cart'
+
 Page({
   /**
    * 调用轮播图接口方法
    */
-  async getBanner(){
+  async getBanner() {
     const response = await ShopModel.getShopBanner()
-    console.log(response,'data');
+    // console.log(response.data,'data');
     this.setData({
-      // bannerData : response.data
+      bannerData: response.data
     })
+  },
+  // 子传父获取商品信息
+  async getShopCode(event) {
+    console.log(event, 'e');
+    // 获取商品的条形码
+    const qcode = event.detail
+    console.log(qcode, 'o');
+    // 如果商品条形码不存在,则不继续往下执行
+    if (!qcode) return
+    try {
+      // 获取商品信息
+      const res = await ShopModel.getShopingInfo(qcode)
+      // console.log(res,'res');
+      // 如果商品信息获取失败,则不继续往下执行
+      if (!res.success) return
+      // 获取商品信息
+      const result = res.result
+      // 获取商品的数据小于等于0,说明没有当前条形码的商品数据,则不继续往下执行
+      if (result.length <= 0) return
+      // 将商品添加本地
+      addCart(result[0])
+      // 跳转到购物车页面
+      navigateTo("/pages/cart/cart")
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   /**
    * 页面的初始数据
    */
   data: {
-    bannerData : []
+    bannerData: []
   },
 
   /**

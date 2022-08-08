@@ -1,1 +1,18 @@
 /* pages/my/my.wxss */
+.scrView{
+  /* width: 100px; */
+  width: 100%;
+  height: 120px;
+}
+.View1{
+  background-color: lightgreen;
+  height: 100px;
+}
+.View2{
+  background-color: lightpink;
+  height: 100px;
+}
+.View3{
+  background-color: lightgrey;
+  height: 100px;
+}

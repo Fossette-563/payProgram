@@ -3,7 +3,7 @@ const APIConfig={
     baseURL:'https://admin.hxwendeng.com'
   },
   'api2':{
-    baseURL:'http://jd.itying.com' 
+    baseURL:'http://weixin.itying.com' 
   }
 }
 export {APIConfig}
