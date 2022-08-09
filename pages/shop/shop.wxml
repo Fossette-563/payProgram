@@ -3,5 +3,5 @@
   <!-- 轮播图 -->
   <i-swiper data="{{bannerData}}"></i-swiper>
   <!-- 扫码按钮 -->
-  <i-code-button bind:getResult="getShopCode"></i-code-button>
+  <i-code-button count="{{count}}" status="{{status}}" bind:getResult="getShopCode"></i-code-button>
 </view>

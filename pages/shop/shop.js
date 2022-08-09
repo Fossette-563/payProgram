@@ -6,7 +6,7 @@ import {
 import {
   addCart
 } from '../../common/cart'
-
+import Storage from "../../utils/storage"
 Page({
   /**
    * 调用轮播图接口方法
@@ -20,6 +20,9 @@ Page({
   },
   // 子传父获取商品信息
   async getShopCode(event) {
+    if (this.data.status) {
+      navigateTo("/pages/order/order")
+    }
     console.log(event, 'e');
     // 获取商品的条形码
     const qcode = event.detail
@@ -45,11 +48,25 @@ Page({
     }
   },
 
+  getCartList() {
+    const cartList = Storage.get("carts")
+    const status = cartList.length > 0 ? true : false
+    const count = cartList.length
+    console.log(' cartList.length', cartList.length)
+    this.setData({
+      cartList,
+      status,
+      count
+    })
+
+  },
   /**
    * 页面的初始数据
    */
   data: {
-    bannerData: []
+    bannerData: [],
+    count: 0,
+    status: false,
   },
 
   /**
@@ -70,7 +87,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.getCartList()
   },
 
   /**
