@@ -21,6 +21,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/order/order",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/success/success",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

@@ -1,7 +1,8 @@
 /**app.wxss**/
-page{
+page {
   height: 100%;
 }
+
 .container {
   height: 100vh;
   /* display: flex;
@@ -10,5 +11,8 @@ page{
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box; */
-} 
+}
 
+.price {
+  color: #f60;
+}

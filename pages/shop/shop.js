@@ -13,7 +13,7 @@ Page({
    */
   async getBanner() {
     const response = await ShopModel.getShopBanner()
-    // console.log(response.data,'data');
+    console.log(response,'data');
     this.setData({
       bannerData: response.data
     })
